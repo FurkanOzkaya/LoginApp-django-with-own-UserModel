@@ -1,0 +1,27 @@
+<header class="header-main">
+<nav>
+		<div class="logo">
+			GoldExchange
+		</div>
+		<ul class="navlinks">
+			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="{% url 'user:service' %}">Services</a></li>
+			<li><a href="#">Contact</a></li>
+			{% if  request.session.id%}
+			<li><a href="{% url 'index' %}">Kontrol Paneli</a></li>
+			<li><a href="{% url 'user:logout' %}">Çıkış Yap</a></li>
+			{% else %}
+			<li><a href="{% url 'user:login' %}">Giriş Yap</a></li>
+			<li><a href="{% url 'user:register' %}">Kayıt Ol</a></li>
+			{% endif %}
+
+			
+		</ul>
+		<div class="hamburger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+</nav>
+</header>
